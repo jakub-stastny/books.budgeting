@@ -1,0 +1,14 @@
+%\renewcommand\section{\@startsection {section}{1}}
+
+% https://www.overleaf.com/learn/latex/Environments
+% Read for more info on passing arguments and numbering environments.
+\newenvironment{note}
+    {\begin{center}
+    \begin{tabular}{|p{0.9\textwidth}|}
+    \hline\\
+    }
+    { 
+    \\\\\hline
+    \end{tabular} 
+    \end{center}
+    }
