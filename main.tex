@@ -1,9 +1,12 @@
 \documentclass[a5paper,10pt]{article}
-\usepackage[utf8]{inputenc}
 
+\usepackage[utf8]{inputenc}
+% https://www.overleaf.com/learn/latex/Page_size_and_margins
+\usepackage[a5paper, textwidth=12cm]{geometry} % A5: 14.8 x 21
 \usepackage{graphicx}
 \usepackage{xcolor}
 \usepackage{titlesec}
+\usepackage{epigraph}
 
 % PDF metadata
 \usepackage[pdftex,
@@ -18,6 +21,29 @@
 \definecolor{DarkRed}{HTML}{b51616}
 \definecolor{Indigo}{HTML}{1649b3}
 \definecolor{Olive}{HTML}{3e6333}
+\definecolor{DarkGreen}{HTML}{006400}
+
+\definecolor{CurrentWeek}{HTML}{1649b3}
+\definecolor{Savings}{HTML}{57d1fc}
+\definecolor{ComingWeeks}{HTML}{e4c95e}
+
+\definecolor{CoverPageBackground}{HTML}{7fd95b}
+\definecolor{PageBackground}{HTML}{ffffff}
+
+% PDF links
+\usepackage{hyperref}% http://ctan.org/pkg/hyperref
+\hypersetup{
+  colorlinks=true,
+  linkcolor=Indigo,
+  urlcolor=green!70!black
+}
+
+% Remove counter for subsubsections.
+\setcounter{secnumdepth}{2}
+
+% Don't indent paragraphs, but leave vertical space.
+\setlength{\parindent}{0em}
+\setlength{\parskip}{0.3em}
 
 % https://tex.stackexchange.com/questions/10320/section-and-subsection-colors-using-titlesec#10322
 \titleformat*{\section}{\Large\bfseries\sffamily\color{DarkRed}}
@@ -28,12 +54,12 @@
 
 \begin{document}
 
-% Cover page
-\input{cover}
+\include{cover}
+
+\include{intro}
 
 \tableofcontents
-\pagebreak
 
-\input{content}
+\include{content}
 
 \end{document}

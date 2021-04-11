@@ -2,13 +2,21 @@
 
 % https://www.overleaf.com/learn/latex/Environments
 % Read for more info on passing arguments and numbering environments.
-\newenvironment{note}
-    {\begin{center}
-    \begin{tabular}{|p{0.9\textwidth}|}
-    \hline\\
-    }
-    { 
-    \\\\\hline
-    \end{tabular} 
-    \end{center}
-    }
+\newenvironment{note}{\begin{tcolorbox}[colback=red!5!white,colframe=red!75!black,title=Note]}{\end{tcolorbox}}
+
+% Use \enquote{phrase} for inline quotations.
+\usepackage[english]{babel}
+\usepackage{csquotes}
+\DeclareQuoteStyle[american]{english}
+        {\itshape\textquotedblleft}
+        [\textquotedblleft]
+        {\textquotedblright}
+        [0.05em]
+        {\textquoteleft}
+        {\textquoteright}
+
+% Insert an index card.        
+\def\indexcard#1{\begin{figure}\centering\includegraphics[width=0.8\textwidth]{#1}\end{figure}}
+
+% Note box
+\usepackage{tcolorbox}
